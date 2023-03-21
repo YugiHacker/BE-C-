@@ -60,6 +60,14 @@ namespace OnlineLearningWeb.Controllers
             var user = _userRepository.DeleteUser(_userRepository.GetUserByID(id));
             return Ok(user);
         }
+        [HttpPost("role")]
+        public IActionResult ChangeRole([FromBody] ChangeRole model)
+        {
+            var user = _userRepository.GetUserByUsername(model.username);
+            user.Role = model.newrole;
+            _userRepository.UpdateUser(user);
+            return Ok();
+        }
         [HttpPost("changepassword")]
         //[Authorize]
         public IActionResult ChangePassword([FromBody] ChangePassword model)

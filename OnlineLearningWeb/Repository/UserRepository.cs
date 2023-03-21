@@ -33,7 +33,7 @@ namespace OnlineLearningWeb.Repository
             {
                 Username = userSignup.Username,
                 Password = userSignup.Password,
-                Role = "user",
+                Role = "student",
                 Image = "a",
                 Email = (userSignup.Email != "" ? userSignup.Email : "a") ,
                 Fullname = (userSignup.Fullname != "" ? userSignup.Fullname : "a"),
